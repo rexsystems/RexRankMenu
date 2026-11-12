@@ -1,0 +1,26 @@
+# Dressing for the LuckPerms track. The track itself is settings.track in config.yml.
+# Keys under ranks are group names. A group with no section uses the default material and the group name.
+# order is optional. Listed groups that exist on the track come first. Other track groups follow in track order.
+
+order: []
+
+ranks:
+  vip:
+    price: 10000
+    currency: vault
+    name: "<gold>VIP"
+    lore:
+      - "<gray>Price: <white>{price} {currency}"
+      - "<gray>{status}"
+    slot: 20
+    material: GOLD_INGOT
+  mvp:
+    price: 25000
+    currency: vault
+    name: "<aqua>MVP"
+    lore:
+      - "<gray>Price: <white>{price} {currency}"
+      - "<gray>{status}"
+    slot: 22
+    material: DIAMOND
+    # custom-model-data: 1001

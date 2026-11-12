@@ -1,0 +1,70 @@
+# RexRankMenu configuration
+# Player-facing text accepts MiniMessage, legacy & codes, &#RRGGBB, and #RRGGBB.
+# Inserted values ({player}, {rank}, {group}, {price}) are literal. Color belongs in the template.
+
+config-version: 1
+
+settings:
+  # LuckPerms track name. The groups are read from this track when the menu opens.
+  track: ranks
+  # true: the player selects the next rank, then clicks the confirm slot.
+  # false: clicking the next rank buys it.
+  confirm: true
+  # Empty uses global parents and adds the new parent with no context.
+  # Any other value is the LuckPerms "server" context used when reading and adding the parent.
+  server-context: ""
+  default-material: PAPER
+  gui:
+    title: "<dark_gray>Ranks"
+    rows: 6
+    confirm-slot: 49
+    # none hides the filler.
+    filler: GRAY_STAINED_GLASS_PANE
+    confirm-material: LIME_DYE
+    confirm-name: "<green>Confirm {rank}"
+    confirm-lore:
+      - "<gray>Price: <white>{price} {currency}"
+      - "<yellow>Click to buy"
+    idle-material: GRAY_DYE
+    idle-name: "<gray>Confirm"
+    idle-lore:
+      - "<gray>Click the next rank, then click here."
+
+currencies:
+  vault:
+    type: vault
+  tokens:
+    type: placeholder
+    balance-placeholder: "%tokens_balance%"
+    give-command: "tokens give {player} {amount}"
+    take-command: "tokens take {player} {amount}"
+
+messages:
+  no-permission: "<red>You do not have permission."
+  players-only: "<red>Only a player can open this menu."
+  player-not-found: "<red>{player} is not online."
+  reloaded: "<green>RexRankMenu reloaded."
+  track-missing: "<red>LuckPerms track <white>{track} <red>does not exist."
+  track-empty: "<red>LuckPerms track <white>{track} <red>has no groups."
+  luckperms-failed: "<red>LuckPerms did not return your groups. Nothing was charged."
+  already-owned: "<yellow>You already have <white>{rank}<yellow>."
+  not-next: "<red>The next rank is <white>{next}<red>."
+  not-enough: "<red>You need <white>{price} {currency}<red>."
+  purchased: "<green>You bought <white>{rank}<green>."
+  failed: "<red>{rank} was not applied. Your payment was returned."
+  highest: "<gray>You already have the last rank on <white>{track}<gray>."
+  no-buy: "<red>You cannot buy ranks."
+  currency-missing: "<red>Currency <white>{currency} <red>is not available. Nothing was charged."
+  busy: "<gray>A purchase is already in progress."
+  selected: "<yellow>Click confirm to buy <white>{rank} <yellow>for <white>{price} {currency}<yellow>."
+  select-first: "<gray>Select the next rank first."
+  status-owned: "Owned"
+  status-next: "Available"
+  status-locked: "Locked"
+
+help:
+  - "<gray>RexRankMenu"
+  - "<white>/rexrankmenu <gray>- open the menu"
+  - "<white>/rexrankmenu open [player]"
+  - "<white>/rexrankmenu reload"
+  - "<white>/rexrankmenu help"
