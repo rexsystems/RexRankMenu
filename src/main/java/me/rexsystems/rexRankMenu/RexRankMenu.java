@@ -18,6 +18,7 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.Plugin;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;
@@ -26,6 +27,8 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class RexRankMenu extends JavaPlugin {
+
+    private static final int BSTATS_PLUGIN_ID = 35271;
 
     private boolean started;
     private volatile MenuConfig menuConfig;
@@ -71,6 +74,7 @@ public final class RexRankMenu extends JavaPlugin {
         command.setTabCompleter(executor);
         warnCurrencies();
         this.started = true;
+        new Metrics(this, BSTATS_PLUGIN_ID);
         getLogger().info("RexRankMenu enabled.");
     }
 
