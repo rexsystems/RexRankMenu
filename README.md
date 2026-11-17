@@ -36,7 +36,7 @@ Aliases: `/rrank`, `/rank`
 
 The pages in [docs/](docs/index.md) drop into a Starlight site at `src/content/docs/rexrankmenu/`. Paste `docs/sidebar.mjs` into the site sidebar.
 
-Full docs: https://rexsystems.me/docs/rexrankmenu
+Full docs: https://docs.rexsystems.me/rexrankmenu/
 
 ## License
 

@@ -1,1 +1,1 @@
-https://rexsystems.me/docs/rexrankmenu
+https://docs.rexsystems.me/rexrankmenu/
